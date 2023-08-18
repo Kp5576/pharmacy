@@ -24,7 +24,7 @@ class LoginController extends Controller
         if (!$authenticate) {
             return back()->with('login_error', 'Invalid user credentials');
         } else {
-            if (Auth()->user()->role == 'user') {
+            if (auth()->user()->role == 'user') {
                 return dd('user');
             } else {
                 return redirect()->route('dashboard');
